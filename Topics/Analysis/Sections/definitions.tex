@@ -10,7 +10,7 @@ The following concepts are assumed known:
 \end{itemize}
 
 \subsubsection{Sequences}
-A sequence is a function whose domain is an ordered subset of the integers (usually \(\N\)). If we let \(n \in \N\) and \(a_n \in \R\), then \(\left(a_n\right)_{n\in\N} = (a_1, a_2, a_3, \dots)\) is said to be a real sequence. Each number \(a_n\) is called a term of the sequence.
+A sequence is a function whose domain is an ordered subset of the integers (usually \(\N\)). If we let \(n \in \N\) and \(a_n \in \R\), then \(\left(a_n\right)_{n\in\N} = (a_1, a_2, a_3, \dots)\) is said to be a real sequence. Each image\footnote{An image is the value of a function evaluated at a specific input} \(a_n\) is called a term of the sequence.
 
 One can view a sequence as simply being a map \(a : D_a \to V_a\). The codomain may consist of any set that contains the sequence's possible outputs, for example, \(\N\), \(\mathbb{Z}\), \(\mathbb{Q}\), \(\R\), \(\mathbb{C}\), or even vector spaces like \(\R^2\) or \(\mathbb{C}^2\). A sequence \((a_n)_{n \in A}\) may also be finite over a set \(A = \{n_1, n_2, \dots, n_k\}\) with \(k \in \N\). Unless otherwise stated though, assume that any given sequence is a map \(a : \N \to \R\).
 
@@ -28,7 +28,7 @@ A partial sum, \(S_n\), of the series \(\sum_{k=1}^{\infty}a_k\) is the sum of t
 \end{equation}
 
 \subsubsubsection{Limit of partial sum}
-The limit of the partial sum \(S_n\) converges to \(S \in \R\) as \(n\) approaches infinity, if and only if
+The limit of the partial sum \(S_n\) converges to \(S \in \R\) as \(n\) approaches infinity if and only if
 \begin{equation}
     \forall \varepsilon \in \R^+ \ \exists N = N(\varepsilon) \in \N \suchthat n > N \implies |S_n - S| < \varepsilon
 \end{equation}
