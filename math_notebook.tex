@@ -26,14 +26,6 @@
 \usepackage{minted}               % minted v3+ handles output dir automatically
 \usepackage{styles}               % loads minted settings
 
-% -------------------------------
-% Section formatting
-% -------------------------------
-\makeatletter
-\@addtoreset{equation}{section}
-\makeatother
-\renewcommand{\thesubsection}{\arabic{section}\arabic{subsection}}
-\renewcommand{\theequation}{\arabic{section}.\arabic{subsection}.\arabic{equation}}
 
 % -------------------------------
 % Spacing
@@ -43,19 +35,55 @@
 \parindent=0pt
 \baselineskip=15pt
 
+
+% -------------------------------
+% Section formatting
+% -------------------------------
+\setcounter{secnumdepth}{4}
+\makeatletter
+\newcounter{subsubsubsection}[subsubsection]
+\renewcommand{\thesubsubsubsection}{\thesubsubsection.\arabic{subsubsubsection}}
+\newcommand{\subsubsubsection}[1]{%
+    \refstepcounter{subsubsubsection}
+    \textbf{\thesubsubsubsection \quad #1} \par
+}
+\makeatother
+
+\makeatletter
+\@addtoreset{equation}{section}
+\@addtoreset{equation}{subsection}
+\@addtoreset{equation}{subsubsection}
+\makeatother
+\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}}
+\renewcommand{\theequation}{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}.\arabic{equation}}
+
+
+
 % -------------------------------
 % Math operators/delimiters
 % -------------------------------
 \DeclareMathOperator{\statement}{P}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\positiverealnumber}{\mathbb{R}^{+}}
+\newcommand{\suchthat}{\ \ s.t. \ \ }
+
 
 \title{Math Notebook}
 \author{Markkus Hansen}
-\date{\today}
+\date{
+\begin{tabular}{rl}
+    Created:&\!\!\!\!\! July 7, 2026 \\
+    Last updated:&\!\!\!\!\! \today
+\end{tabular}
+}
 
 
 \begin{document}
 \maketitle
-07-07-2026
 \tableofcontents
 \input{Topics/main.tex}
 

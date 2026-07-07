@@ -1,0 +1,33 @@
+\subsection{Conventions and notation}
+\subsubsection{Abbreviations for references}
+\begin{tabular}{lrl}
+    •\!\!&TL: & Kalkulus - Tom Lindstrøm - 4.utgave \\
+    •\!\!&An1: & Analyse 1 - Matthias Christandl, Søren Eilers og Henrik Schlichtkrull - Syvende udgave
+\end{tabular}
+
+\subsubsection{Standard number sets}
+Notation of standard sets of numbers in the analysis section of this notebook.
+\begin{itemize}
+    \item \(\N = \{1,2,3,\dots\}\)
+    \item \(\N_0 = \{0,1,2,\dots\}\)
+    \item \(\Z^+ = \N\)
+    \item \(\R^+ = \{x \in \R \mid x > 0\}\)
+\end{itemize}
+
+\subsubsection{Placeholder sets}
+Unless otherwise stated, uppercase Latin letters \(A, B, C, \dots\) denote subsets of \(\R\). I.e. whenever something like \(f : A \to B\) is written without further context of the domain and codomain \(A\) and \(B\), assume that \(A, B \subseteq \R\).
+
+This assumption also holds for functions defined like \(f : D_f \to V_f\).
+
+\subsubsection{Mathematical statements \texorpdfstring{\(\statement(x) \text{ or } \statement(n)\)}{}}
+Not to be confused with the power set \(\mathcal{P}(S)\), the notation \(\statement(x)\) or \(\statement(n)\) refers to a mapping \(\statement : D_{\statement} \to \{\bot, \top\}\) that assigns a truth value based on whether the statement holds for a given input value.\footnote{The \(\{\bot, \top\}\) is equivalent to \(\{\text{False},\text{True}\}\), \(\{0,1\}\), etc.} In this notebook, unless otherwise stated, assume that \(D_{\statement} \subseteq \R\) when \(\statement(x)\) is written, and assume that \(D_{\statement} \subseteq \mathbb{N}\) when \(\statement(n)\) is written.
+
+\subsubsection{Explicit dependence \texorpdfstring{\(\text{e.g. } N = N(\varepsilon) \text{, } \delta = \delta(\varepsilon)\)}{PDFstring}}
+When you see something like "\(\varepsilon \in \R^+, \ \delta = \delta(\varepsilon)\)" in this notebook, you may read it as "Let \(\varepsilon\) be a positive real number, and let \(\delta\) be a number where its value depends in some way on the value of \(\varepsilon\)". This notation is simply for ease of understanding the structure of proofs and theorems, and may show itself in epsilon-N proofs (for sequences) like
+\begin{equation}
+    \forall \varepsilon \in \R^+ \ \exists N = N(\varepsilon) \in \N \suchthat n > N \implies |a_n - a| < \varepsilon
+\end{equation}
+or epsilon-delta proofs like
+\begin{equation}
+    \forall \varepsilon \in \R^{+} \ \exists \delta = \delta(\varepsilon) \in \R^{+} \suchthat 0 < |x - a| < \delta \implies |f(x) - b| < \varepsilon
+\end{equation}

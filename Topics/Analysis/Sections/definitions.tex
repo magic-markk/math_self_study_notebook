@@ -1,1 +1,68 @@
-\subsection{Definitions}
+\subsection{Given definitions and prerequisites}
+
+The following concepts are assumed known:
+\begin{itemize}
+    \item Basic set theory notation
+    \item Real number arithmetic
+    \item Functions and mappings
+    \item Mathematical induction
+    \item Proof techniques
+\end{itemize}
+
+\subsubsection{Sequences}
+A sequence is a function whose domain is an ordered subset of the integers (usually \(\N\)). If we let \(n \in \N\) and \(a_n \in \R\), then \(\left(a_n\right)_{n\in\N} = (a_1, a_2, a_3, \dots)\) is said to be a real sequence. Each number \(a_n\) is called a term of the sequence.
+
+One can view a sequence as simply being a map \(a : D_a \to V_a\). The codomain may consist of any set that contains the sequence's possible outputs, for example, \(\N\), \(\mathbb{Z}\), \(\mathbb{Q}\), \(\R\), \(\mathbb{C}\), or even vector spaces like \(\R^2\) or \(\mathbb{C}^2\). A sequence \((a_n)_{n \in A}\) may also be finite over a set \(A = \{n_1, n_2, \dots, n_k\}\) with \(k \in \N\). Unless otherwise stated though, assume that any given sequence is a map \(a : \N \to \R\).
+
+A finite sequence of length two may be denoted as \((a, b)\). To avoid confusing it with the notation of an open interval, assume that \((a, b)\) refers to an open interval if it is not stated to be a finite sequence.
+
+\subsubsection{Series}
+A series is an expression representing the sum of the terms in a finite or infinite sequence. For \((a_n)_{n \in \N}\) we define its corresponding series as the expression
+\begin{equation}
+    \sum_{n=1}^{\infty}a_n
+\end{equation}
+
+A partial sum, \(S_n\), of the series \(\sum_{k=1}^{\infty}a_k\) is the sum of the terms within a finite subsequence \((a_k)_{k \in A}\) with \(A = \{k \in \N \mid 1 \le k \le n\}\).\footnote{Pretentious way of writing \(A = \{1,2,3,\dots,n\}\)} The \(n\)-th partial sum \(S_n\) may then be defined as
+\begin{equation}
+    S_n = \sum_{k=1}^{n}a_k
+\end{equation}
+
+\subsubsubsection{Limit of partial sum}
+The limit of the partial sum \(S_n\) converges to \(S \in \R\) as \(n\) approaches infinity, if and only if
+\begin{equation}
+    \forall \varepsilon \in \R^+ \ \exists N = N(\varepsilon) \in \N \suchthat n > N \implies |S_n - S| < \varepsilon
+\end{equation}
+i.e.
+\begin{equation}
+    \lim_{n\to \infty}S_n = S
+\end{equation}
+which means that the series converges to the value \(S\):
+\begin{equation}
+    \sum_{n=1}^{\infty}a_n = S
+\end{equation}
+
+
+\subsubsection{Limits over real functions}
+Symbolic definition of limit for \(f : \R \to \R\)
+\begin{equation}
+    \forall \varepsilon \in \R^{+} \ \exists \delta = \delta(\varepsilon) \in \R^{+} \suchthat \forall x \in D_f : 0 < |x - a| < \delta \implies |f(x) - b| < \varepsilon
+\end{equation}
+This defines the standard limit notation of
+\begin{equation}
+    \lim_{x \to a} f(x) = b
+\end{equation}
+Definition is taken from TL definition 5.4.1.
+
+\subsubsection{Continuity}
+A function \(f : D_f \to V_f\) is said to be continuous at a point \(a \in D_f\) if the following holds:
+\begin{equation}
+    \forall \varepsilon \in \R^+ \ \exists \delta = \delta(\varepsilon) \in \R^+ \suchthat \forall x \in D_f : |x - a| < \delta \implies |f(x) - f(a)| < \varepsilon
+\end{equation}
+Definition is taken from TL definition 5.1.1.
+
+\subsubsection{Derivatives}
+Given a function \(f : D_f \to V_f\), the derivative of \(f\) at a point \(a \in D_f\) is defined as
+\begin{equation}
+    f'(a) = \lim_{x \to a}\frac{f(x) - f(a)}{x - a}
+\end{equation}
+
