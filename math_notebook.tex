@@ -1,1 +1,62 @@
+% -------------------------------
+% Fonts & layout
+% -------------------------------
+\documentclass[11pt]{article}
+\usepackage{lmodern, fullpage, amsmath, amsfonts, amssymb, mathtools, graphicx}
+\usepackage{charter}
+\usepackage[a4paper, total={6.7in, 9in}]{geometry}
 
+% -------------------------------
+% Links
+% -------------------------------
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=magenta,
+    urlcolor=cyan,
+}
+\usepackage{bookmark}
+\usepackage{pdfpages}
+\usepackage{caption}
+
+% -------------------------------
+% Code highlighting
+% -------------------------------
+\usepackage{minted}               % minted v3+ handles output dir automatically
+\usepackage{styles}               % loads minted settings
+
+% -------------------------------
+% Section formatting
+% -------------------------------
+\makeatletter
+\@addtoreset{equation}{section}
+\makeatother
+\renewcommand{\thesubsection}{\arabic{section}\arabic{subsection}}
+\renewcommand{\theequation}{\arabic{section}.\arabic{subsection}.\arabic{equation}}
+
+% -------------------------------
+% Spacing
+% -------------------------------
+\topskip=0pt
+\parskip=8pt
+\parindent=0pt
+\baselineskip=15pt
+
+% -------------------------------
+% Math operators/delimiters
+% -------------------------------
+\DeclareMathOperator{\statement}{P}
+
+\title{Math Notebook}
+\author{Markkus Hansen}
+\date{\today}
+
+
+\begin{document}
+\maketitle
+07-07-2026
+\tableofcontents
+\input{Topics/main.tex}
+
+\end{document}

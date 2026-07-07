@@ -1,0 +1,95 @@
+% soft-monokai-minted.sty
+\ProvidesPackage{styles}[Monokai style for minted]
+
+% -------------------------------
+% Required packages
+% -------------------------------
+\RequirePackage{xcolor}
+\RequirePackage{minted}
+\RequirePackage{tcolorbox}
+\tcbuselibrary{minted,skins}
+\RequirePackage{etoolbox}
+
+% -------------------------------
+% Colors
+% -------------------------------
+\definecolor{sm-bg}{HTML}{E8E8E8}  % dark background
+\definecolor{sm-frame}{HTML}{272822}
+\definecolor{sm-inline-bg}{HTML}{3C3C3C} % slightly lighter for inline code
+
+\tcbset{
+    sm-minted/.style={
+        listing engine=minted,
+        colback=sm-bg,
+        colframe=sm-bg,
+        boxsep=1mm,
+        left=1mm,
+        right=1mm,
+        top=0mm,
+        bottom=0mm,
+        arc=0mm,
+        outer arc=0mm,
+    }
+}
+
+\newtcolorbox{theorembox}{
+    colback=white,
+    colframe=black,
+    boxsep=1mm,
+    left=1mm,
+    right=1mm,
+    top=1mm,
+    bottom=1mm,
+    arc=0mm,
+    outer arc=0mm,
+    sharp corners
+}
+\newenvironment{theorem}[1]
+    {
+        \begin{theorembox}
+        {\large #1} \\
+    }
+    {\end{theorembox}}
+
+% Define code output environment
+\newtcolorbox{codeoutput}{
+    colback=white,
+    colframe=white,
+    fontupper=\ttfamily\small,
+    boxsep=2mm,
+    left=0mm,
+    right=0mm,
+    top=0mm,
+    bottom=0mm,
+    arc=0mm,
+    outer arc=0mm,
+    sharp corners
+}
+
+% -------------------------------
+% Wrap minted environments automatically
+% -------------------------------
+\AtBeginDocument{
+    \setminted{
+        style=bw,
+        linenos,
+        breaklines,
+        autogobble,
+        fontsize=\small
+    }
+
+    \BeforeBeginEnvironment{minted}{
+        \begin{tcolorbox}[sm-minted]
+    }
+    \AfterEndEnvironment{minted}{
+        \end{tcolorbox}
+    }
+
+    \setmintedinline{
+        style=tango,
+        fontsize=\small,
+        breaklines=false
+    }
+}
+
+\endinput
