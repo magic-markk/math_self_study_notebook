@@ -1,0 +1,16 @@
+\subsubsection{Power rule}
+Let \(f : A \to B\) be a function of the form \(f(x) = x^n\). The power rule thus states that the derivative of \(f\) is the following
+\begin{equation}
+    f'(x) = nx^{n-1}
+\end{equation}
+
+\textbf{Proof}
+\begin{align*}
+    \left(x^n\right)' &= \lim_{h\to 0}\frac{(x + h)^n - x^n}{h} \\
+    &= \lim_{h \to 0}\frac{-x^n + \sum_{k=0}^{n}\binom{n}{k}x^{n-k}h^{k}}{h} \\
+    &= \lim_{h \to 0} \frac{\sum_{k=1}^{n}\binom{n}{k}x^{n-k}h^{k}}{h} \\
+    &= \lim_{h \to 0} \sum_{k=1}^{n}\binom{n}{k}x^{n-k}h^{k-1} \\
+    &= \lim_{h \to 0} \binom{n}{1} x^{n-1} h^0 + \sum_{k=2}^{n}\binom{n}{k}x^{n-k}h^{k-1} \\
+    &= n x^{n-1} + \lim_{h \to 0} \sum_{k=2}^{n}\binom{n}{k}x^{n-k}h^{k-1} \\
+    \Big(h \to 0 \land k - 1 \ge 1\Big) \implies \left(x^n\right)' &= n x^{n-1}
+\end{align*}
