@@ -1,0 +1,13 @@
+\subsubsection{Constant coefficient rule}
+For any function \(f : A \to B\) and a constant \(c\), we have that
+\begin{equation}
+    \left(c f(x)\right)' = c f'(x)
+\end{equation}
+
+\textbf{Proof}
+\begin{align*}
+    \left(c f(x)\right)' &= \lim_{h \to 0}\frac{c f(x + h) - c f(x)}{h} \\
+    &= \lim_{h \to 0} \frac{c\left(f(x + h) - f(x)\right)}{h} \\
+    &= c \lim_{h \to 0} \frac{f(x + h) - f(x)}{h} \\
+    &= c f'(x) & \blacksquare
+\end{align*}
